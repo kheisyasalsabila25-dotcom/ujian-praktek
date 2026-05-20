@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Praktikum JS - Nomor 2</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 20px; }
+        pre { background-color: #f4f4f4; padding: 15px; border-radius: 5px; font-size: 16px; }
+    </style>
+</head>
+<body>
+
+    <h2>Dapatkan Tanggal Saat Ini dalam Berbagai Format</h2>
+    <p>Output yang diharapkan (bisa dicek juga di Console Developer Tools):</p>
+    
+    <pre id="output-tanggal"></pre>
+
+    <script>
+        // 1. Membuat objek Date untuk mendapatkan waktu sekarang
+        const hariIni = new Date();
+
+        // 2. Mendapatkan hari, bulan, dan tahun
+        let dd = hariIni.getDate();
+        let mm = hariIni.getMonth() + 1; // getMonth() dimulai dari 0 (Januari = 0)
+        const yyyy = hariIni.getFullYear();
+
+        // 3. Menambahkan angka nol di depan jika nilai hari/bulan kurang dari 10
+        if (dd < 10) {
+            dd = '0' + dd;
+        }
+        if (mm < 10) {
+            mm = '0' + mm;
+        }
+
+        // 4. Menyusun berbagai format string yang diminta
+        const format1 = mm + '-' + dd + '-' + yyyy;
+        const format2 = mm + '/' + dd + '/' + yyyy;
+        const format3 = dd + '-' + mm + '-' + yyyy;
+        const format4 = dd + '/' + mm + '/' + yyyy;
+
+        // 5. Mencetak string tanggal yang telah diformat ke konsol (Sesuai instruksi soal)
+        console.log(format1);
+        console.log(format2);
+        console.log(format3);
+        console.log(format4);
+
+        // 6. Menampilkan ke halaman HTML agar terlihat langsung
+        const hasilGabungan = `${format1}\n${format2}\n${format3}\n${format4}`;
+        document.getElementById('output-tanggal').innerText = hasilGabungan;
+    </script>
+
+</body>
+</html>
